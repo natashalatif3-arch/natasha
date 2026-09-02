@@ -1,0 +1,575 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+   overflow-x: hidden;
+overflow-y: auto;
+
+    font-family: Arial, sans-serif;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            #5b2348 0%,
+            #321329 30%,
+            #170916 60%,
+            #080409 100%
+        );
+}
+
+
+/* =========================
+   STARS
+========================= */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(
+            white 1px,
+            transparent 1px
+        );
+
+    background-size: 85px 85px;
+
+    opacity: 0.22;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.main {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    z-index: 2;
+
+    padding: 15px;
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.floating-heart {
+
+    position: fixed;
+
+    color: #ff80b5;
+
+    font-size: 34px;
+
+    opacity: 0.3;
+
+    pointer-events: none;
+
+    animation: floating 5s infinite ease-in-out;
+}
+
+
+.heart1 {
+    left: 7%;
+    top: 15%;
+}
+
+
+.heart2 {
+    right: 8%;
+    top: 18%;
+    animation-delay: 1s;
+}
+
+
+.heart3 {
+    left: 10%;
+    bottom: 16%;
+    animation-delay: 2s;
+}
+
+
+.heart4 {
+    right: 10%;
+    bottom: 15%;
+    animation-delay: 3s;
+}
+
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform:
+            translateY(-18px)
+            rotate(8deg);
+    }
+}
+
+
+/* =========================
+   LOCK
+========================= */
+
+.lock {
+
+    width: 64px;
+
+    height: 64px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 28px;
+
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    border: 1px solid
+        rgba(255, 150, 195, 0.55);
+
+    box-shadow:
+        0 0 30px
+        rgba(255, 100, 170, 0.25);
+
+    margin-bottom: 10px;
+
+    animation: lockGlow 2.5s infinite;
+}
+
+
+@keyframes lockGlow {
+
+    50% {
+
+        box-shadow:
+            0 0 40px
+            rgba(255, 100, 170, 0.45);
+
+    }
+}
+
+
+/* =========================
+   TITLES
+========================= */
+
+.little-title {
+
+    color: #d7afc2;
+
+    font-size: 9px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 7px;
+}
+
+
+h1 {
+
+    font-family: Georgia, serif;
+
+    font-size: 44px;
+
+    font-weight: normal;
+
+    margin-bottom: 7px;
+}
+
+
+h1 span {
+
+    color: #ff91bd;
+
+    text-shadow:
+        0 0 25px
+        rgba(255, 100, 170, 0.4);
+}
+
+
+.intro {
+
+    color: #b9a6b3;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+    text-align: center;
+
+    margin-bottom: 16px;
+}
+
+
+/* =========================
+   PASSWORD CARD
+========================= */
+
+.password-card {
+
+    width: 365px;
+
+    padding: 22px 25px 18px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 135, 185, 0.13),
+            rgba(255, 255, 255, 0.045)
+        );
+
+    border:
+        1px solid
+        rgba(255, 145, 195, 0.42);
+
+    box-shadow:
+        0 25px 80px
+        rgba(0, 0, 0, 0.65),
+
+        inset 0 0 40px
+        rgba(255, 100, 170, 0.04);
+
+    backdrop-filter: blur(20px);
+}
+
+
+/* =========================
+   CARD TITLE
+========================= */
+
+.card-title {
+
+    text-align: center;
+
+    color: #e4b4c8;
+
+    font-size: 9px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================
+   PASSWORD DOTS
+========================= */
+
+.password-dots {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 13px;
+
+    margin-bottom: 12px;
+}
+
+
+.password-dots span {
+
+    width: 12px;
+
+    height: 12px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        #b993a7;
+
+    transition: 0.2s;
+}
+
+
+.password-dots span.active {
+
+    background: #ff8bb9;
+
+    border-color: #ff8bb9;
+
+    box-shadow:
+        0 0 10px #ff8bb9;
+
+    transform: scale(1.15);
+}
+
+
+/* =========================
+   HINT
+========================= */
+
+.hint {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    color: #aa98a5;
+
+    text-align: center;
+
+    font-size: 9px;
+
+    line-height: 1.5;
+
+    margin-bottom: 15px;
+}
+
+
+.hint-heart {
+
+    font-size: 20px;
+
+    filter:
+        drop-shadow(
+            0 0 6px
+            rgba(255, 100, 170, .5)
+        );
+}
+
+
+.hint b {
+
+    color: #ffaccb;
+
+    font-weight: normal;
+}
+
+
+/* =========================
+   KEYPAD
+========================= */
+
+.keypad {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+
+    justify-items: center;
+}
+
+
+/* =========================
+   HEART BUTTONS
+========================= */
+
+.key {
+
+    width: 65px;
+
+    height: 58px;
+
+    border: none;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            145deg,
+            #8e4267,
+            #632d4d
+        );
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    position: relative;
+
+    clip-path:
+        polygon(
+            50% 94%,
+            5% 49%,
+            5% 30%,
+            14% 17%,
+            28% 14%,
+            50% 30%,
+            72% 14%,
+            86% 17%,
+            95% 30%,
+            95% 49%
+        );
+
+    transition:
+        transform .15s,
+        background .15s;
+
+    pointer-events: auto;
+
+    z-index: 10;
+}
+
+
+.key:hover {
+
+    transform: scale(1.08);
+
+    background:
+        linear-gradient(
+            145deg,
+            #c35a89,
+            #87385f
+        );
+}
+
+
+.key:active {
+
+    transform: scale(.91);
+
+    background: #ff76ad;
+}
+
+
+.key.special {
+
+    color: #ffc6dc;
+
+    font-size: 24px;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+#message {
+
+    height: 14px;
+
+    margin-top: 8px;
+
+    text-align: center;
+
+    font-size: 10px;
+
+    color: #ff9fc4;
+}
+
+
+/* =========================
+   BOTTOM
+========================= */
+
+.bottom-text {
+
+    margin-top: 10px;
+
+    color: #715565;
+
+    font-size: 7px;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================
+   SMALL SCREEN
+========================= */
+
+@media (max-height: 700px) {
+
+    .lock {
+
+        width: 50px;
+
+        height: 50px;
+
+        font-size: 22px;
+
+        margin-bottom: 5px;
+    }
+
+
+    h1 {
+
+        font-size: 35px;
+    }
+
+
+    .intro {
+
+        margin-bottom: 8px;
+    }
+
+
+    .password-card {
+
+        padding-top: 15px;
+
+        padding-bottom: 12px;
+    }
+
+
+    .keypad {
+
+        gap: 6px;
+    }
+
+
+    .key {
+
+        width: 57px;
+
+        height: 49px;
+    }
+
+
+    .bottom-text {
+
+        margin-top: 5px;
+    }
+
+}
